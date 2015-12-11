@@ -157,6 +157,18 @@ describe Bibliografias do
       expect(@doc_elec.titulo).to eq("Como Ser El Mejor Jugador Nba: El Camino A La Gloria")
     end
     
+    it "#La lista se ordena en base al apellido de los autores" do
+      @lista_2.insert_head(@nodo_1)
+      @lista_2.insert_head(@nodo_3)
+      expect(@lista_2.to_s).to eq("Coppulo, S. & Coppulo, L. (Viernes, 27 noviembre 2015). ¡cómo Me Gustan Los Yanquis!. El Periodico, pp. 1.\nThomas, M. (2009). Las Mil Noches Y Una Noche (Alfaguara) (4). España.\n")
+    end
+    
+    it "#La lista si los autores coinciden, se ordenan en base al titulo" do
+      @lista_3.insert_head(@nodo_2)
+      @lista_3.insert_head(@nodo_1)
+      expect(@lista_3.to_s).to eq("Thomas, A. & Hunt, A. & Fowler, C. (2010). Deliberando a la juventud. En (Eds.), Ciencia Vs Realidad (2 pag.) (1º edicion) (2). España\nThomas, M. (2009). Las Mil Noches Y Una Noche (Alfaguara) (4). España.\n")
+    end
+    
   end
   
 end
