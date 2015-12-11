@@ -20,9 +20,6 @@ Or install it yourself as:
 
     $ gem install prct_10
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
