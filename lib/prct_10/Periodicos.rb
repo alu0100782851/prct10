@@ -6,7 +6,7 @@ class Periodicos < Bibliografias
 			
 		super(autores, titulo, publicacion, edicion)
 			
-        @nombre = nombre
+		@nombre = nombre
 		@paginas = paginas
 			
 	end
