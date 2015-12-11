@@ -16,12 +16,12 @@ class Lista
     def insert_head(nodo)
     
         if @head.nil?
-                @head = nodo
-                @tail = @head
-            else 
-                @head.previo = nodo
-                nodo.siguiente = @head
-                @head = @head.previo
+            @head = nodo
+            @tail = @head
+        else 
+            @head.previo = nodo
+            nodo.siguiente = @head
+            @head = @head.previo
             
         end
         @contador+= 1   #Aumentamos variable que indica tamaño de la lista 
@@ -33,12 +33,12 @@ class Lista
     def insert_tail(nodo)
 
         if @head.nil?
-			    @head = nodo
-			    @tail = @head
-		    else
-                @tail.siguiente = nodo
-		        nodo.previo = @tail
-		        @tail = @tail.siguiente
+            @head = nodo
+            @tail = @head
+        else
+            @tail.siguiente = nodo
+            nodo.previo = @tail
+            @tail = @tail.siguiente
         
         end
         @contador+=1
@@ -53,11 +53,11 @@ class Lista
             return nil
         end
         if @head == @tail
-				@head = nil
-				@tail = nil
-			else
-				@head = @head.siguiente
-				@head.previo = nil
+            @head = nil
+            @tail = nil
+        else
+            @head = @head.siguiente
+            @head.previo = nil
         end
         @contador-=1
         return aux.value
@@ -71,11 +71,11 @@ class Lista
         end
         
         if @head == @tail
-				@head = nil
-				@tail = nil
-		    else
-				@tail = @tail.previo
-				@tail.siguiente = nil
+            @head = nil
+            @tail = nil
+        else
+            @tail = @tail.previo
+            @tail.siguiente = nil
         end
 		@contador-=1
         return aux.value
@@ -110,10 +110,10 @@ class Lista
     def each
 	   actual = @tail
 	
-		while actual != nil
-		   yield actual.value
-		   actual = actual.siguiente
-		end
+        while actual != nil
+            yield actual.value
+            actual = actual.siguiente
+        end
     end
     
     def ordenar_list
@@ -121,26 +121,26 @@ class Lista
 		return if contador <= 1
 		reordenar = true
 		
-		while reordenar
+        while reordenar
 				
-			reordenar = false
+            reordenar = false
 			ref = @head
 			ref_2 = @head.siguiente
 			
-			while ref_2 != nil
+            while ref_2 != nil
 				
-				if(ref.value > ref_2.value)
-				    aux = ref.value
-				    ref.value = ref_2.value
-				    ref_2.value = aux
+                if(ref.value > ref_2.value)
+                    aux = ref.value
+                    ref.value = ref_2.value
+                    ref_2.value = aux
 				    
-					reordenar = true
-				end
+                    reordenar = true
+                end
 				
-				ref = ref_2
-				ref_2 = ref_2.siguiente
-			end
-		end
+                ref = ref_2
+                ref_2 = ref_2.siguiente
+            end
+        end
     end
     
 end
