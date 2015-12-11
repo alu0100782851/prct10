@@ -19,22 +19,22 @@ class Bibliografias
        
         if(@autores == other.autores)
 		
-			if(@titulo == other.titulo)
-						return 0 
-			else
-				    arr = [@titulo, other.titulo]
-				    arr.sort_by!{|t| t.downcase}
+            if(@titulo == other.titulo)
+                    return 0 
+            else
+                    arr = [@titulo, other.titulo]
+                    arr.sort_by!{|t| t.downcase}
 					
-					if(arr.first == @titulo)
-						return 1
-					end
-					    return -1
-			end
+                    if(arr.first == @titulo)
+                        return 1
+                    end
+                        return -1
+            end
 
         else
 
-			arr = [@autores, other.autores]
-			arr.sort_by!{|t| t.downcase}
+            arr = [@autores, other.autores]
+            arr.sort_by!{|t| t.downcase}
 			
 			if(arr.first == @autores)
 				return -1
@@ -65,10 +65,10 @@ class Bibliografias
 			string+=vec[1]
 			string+=", "
 				
-				unless vec[2].nil?
-					string+=vec[2][0]
-					string+=". "
-				end
+                unless vec[2].nil?
+                    string+=vec[2][0]
+                    string+=". "
+                end
 				
 			string+=vec[0][0]
 			string+="."
