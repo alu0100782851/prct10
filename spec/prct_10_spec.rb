@@ -153,7 +153,9 @@ describe Bibliografias do
       expect(@articulo.autores).to eq("Thomas, A. & Hunt, A. & Fowler, C.")
     end
     
-    
+    it "#Los titulos van en mayuscula" do
+      expect(@doc_elec.titulo).to eq("Como Ser El Mejor Jugador Nba: El Camino A La Gloria")
+    end
     
   end
   
