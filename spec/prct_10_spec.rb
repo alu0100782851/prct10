@@ -136,4 +136,25 @@ describe Bibliografias do
     
   end
   
+  describe "#Programacion Funcional"do
+      
+    before :each do
+      #Nodos que contienen las referencias para hacer las pruebas
+      @nodo_1 = Nodo.new(@libro)
+      @nodo_2 = Nodo.new(@articulo)
+      @nodo_3 = Nodo.new(@periodico)
+      @nodo_4 = Nodo.new(@doc_elec)
+
+      @lista_2 = Lista.new
+      @lista_3 = Lista.new
+    end
+    
+    it "#Los nombres de los autores se formatean correctamente" do
+      expect(@articulo.autores).to eq("Thomas, A. & Hunt, A. & Fowler, C.")
+    end
+    
+    
+    
+  end
+  
 end
