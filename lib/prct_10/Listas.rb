@@ -116,6 +116,31 @@ class Lista
 		end
     end
     
-    
+    def ordenar_list
+		
+		return if contador <= 1
+		reordenar = true
+		
+		while reordenar
+				
+			reordenar = false
+			ref = @head
+			ref_2 = @head.siguiente
+			
+			while ref_2 != nil
+				
+				if(ref.value > ref_2.value)
+				    aux = ref.value
+				    ref.value = ref_2.value
+				    ref_2.value = aux
+				    
+					reordenar = true
+				end
+				
+				ref = ref_2
+				ref_2 = ref_2.siguiente
+			end
+		end
+    end
     
 end
