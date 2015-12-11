@@ -10,9 +10,9 @@ describe Bibliografias do
 
   before :each do
         @libro = Libros.new(["Mario Thomas"],"Las mil noches y una noche","2009","Alfaguara","4","España")
-		@articulo = Revistas.new(["Antoine Thomas","Andy Hunt", "Chad Fowler"],"ciencia vs realidad","2010","1º edicion", "2", "2 pag.", "Deliberando a la juventud","España")
-		@periodico = Periodicos.new(["Silvia Coppulo", "Leticia Coppulo"], "¡Cómo me gustan los yanquis!", "Viernes, 27 noviembre 2015", "El Periodico", "1")
-		@doc_elec = Doc_electronicos.new(["James Harden"], "Como ser el mejor jugador NBA: El camino a la gloria", "2014, 8, 10","6","Web", "Texas, Estados Unidos", "http://James-harde/biografia.com", "2015, 1, 3")
+        @articulo = Revistas.new(["Antoine Thomas","Andy Hunt", "Chad Fowler"],"ciencia vs realidad","2010","1º edicion", "2", "2 pag.", "Deliberando a la juventud","España")
+        @periodico = Periodicos.new(["Silvia Coppulo", "Leticia Coppulo"], "¡Cómo me gustan los yanquis!", "Viernes, 27 noviembre 2015", "El Periodico", "1")
+        @doc_elec = Doc_electronicos.new(["James Harden"], "Como ser el mejor jugador NBA: El camino a la gloria", "2014, 8, 10","6","Web", "Texas, Estados Unidos", "http://James-harde/biografia.com", "2015, 1, 3")
   end
 
     #Pruebas con la lista y con los nodos
@@ -105,6 +105,33 @@ describe Bibliografias do
     
      it "#El objeto pertenece a la clase BasicObject" do
       @libro.is_a? BasicObject
+    end
+    
+  end
+  
+  describe "#Modulo comparable" do
+    
+    it "#La referencia 1 es menor que la referencia 2" do
+      expect(@libro < @articulo).to eq(false)
+      expect(@periodico < @libro).to eq(true)
+      
+    end 
+    
+    it "#La referencia 1 es mayor que la referencia 2" do
+      expect(@libro > @articulo).to eq(true)
+      expect(@periodico > @libro).to eq(false)
+    end
+    
+    it "#La referencia 1 es igual que la referencia 2" do
+      expect(@libro == @articulo).to eq(false)
+    end
+    	
+    it "#La referencia 1 es menor igual que la referencia 2" do
+      expect(@libro <= @articulo).to eq(false)
+    end
+    	
+    it "#La referencia 1 es mayor igual que la referencia 2" do
+      expect(@libro >= @articulo).to eq(true)
     end
     
   end
